@@ -1,0 +1,18 @@
+// export function createSubscriber(tag) {
+// 	return {
+// 		next(item) { console.log(`${tag}.next ${item}`); },
+// 		error(error) { console.log(`${tag}.error ${error.stack || error}`); },
+// 		complete() { console.log(`${tag}.complete`); }
+// 	};
+// }
+
+
+export function createSubscriber(tag) {
+	return {
+		next: item => console.log(`${tag}.next is ${item}`),
+		error: error => console.log(`${tag}.error is ${error.stack || error}`),
+		complete: function() {
+			console.log(`${tag} is complete`);
+		}
+	};
+}
